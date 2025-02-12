@@ -1,0 +1,11 @@
+.user-content{
+   display: flex;
+    
+}
+.card-content{
+    max-width: 600px;
+    flex-direction: row;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+}

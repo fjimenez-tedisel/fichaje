@@ -1,0 +1,29 @@
+<header>
+  <div class="content header-wrapper">
+    <div class="card d-flex header-content">
+      <span class="logo-content">
+        <img class="logo" src="assets/tedisel.png" alt="">
+      </span>
+    </div>
+  </div>
+</header>
+<main>
+  <div class=" vh-100 main-content">
+    <div class="card p-5 login-content">
+      <div class="icon-content"><i class=" bi bi-person-circle"></i></div>
+      <div class="data-content">
+        <form [formGroup]="form" (ngSubmit)="onSumbit()">
+            <div class=" form-group mb-3">
+              <label for="email" class="form-label">Correo Electrónico</label>
+              <input formControlName="email" type="email" class="form-control" id="email" placeholder="nombre@ejemplo.com">
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Contraseña</label>
+              <input formControlName="password" type="password" class="form-control" id="password" placeholder="********">
+            </div>
+            <button type="submit" class="btn btn-primary">Acceder</button>
+          </form>
+      </div>
+    </div>
+  </div>
+</main>
