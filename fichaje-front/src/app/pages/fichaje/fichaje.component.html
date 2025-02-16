@@ -1,0 +1,11 @@
+<div class="container text-center mt-5">
+    <h2>Fichajes</h2>
+    <p>Registra tu entrada y salida</p>
+  
+    <button class="btn btn-primary m-2" (click)="fichar()">Fichar</button>
+  
+    <div @if{ultimaFichada} class="alert alert-success mt-3">
+      Última fichada: {{ ultimaFichada }}
+    </div>
+  </div>
+  
