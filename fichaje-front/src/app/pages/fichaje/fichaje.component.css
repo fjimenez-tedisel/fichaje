@@ -23,12 +23,12 @@
     flex: 1;
   }
   .textoDate {
-    font-size: 3vw; /* Crece con el tamaño de la ventana */
+    font-size: 1vw; /* Crece con el tamaño de la ventana */
     text-align: center;
     white-space: nowrap; /* Evita que el texto se divida en varias líneas */
   }
   .textoHour {
-    font-size: 5vw; /* Crece con el tamaño de la ventana */
+    font-size: 2vw; /* Crece con el tamaño de la ventana */
     text-align: center;
     white-space: nowrap; /* Evita que el texto se divida en varias líneas */
   }
