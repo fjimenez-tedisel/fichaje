@@ -2,4 +2,64 @@
     max-width: 400px;
     margin: auto;
   }
-  
+  .time-content{
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    padding: 10px;
+    gap: 10px;
+    
+  }
+  .date-content{
+    display: flex;
+    justify-content: flex-start;
+    flex: 1;
+    min-width: 300px;
+  }
+  .hour-content{
+    display: flex;
+    justify-content: center;
+    flex: 1;
+  }
+  .textoDate {
+    font-size: 3vw; /* Crece con el tamaño de la ventana */
+    text-align: center;
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+  }
+  .textoHour {
+    font-size: 5vw; /* Crece con el tamaño de la ventana */
+    text-align: center;
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+  }
+  .controls-content{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 20px;
+    justify-content: space-between;
+  }
+  .entry-content{
+    max-width: 50%;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+  }
+  .finish-content{
+    max-width: 50%;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  .entryHour{
+    padding: 20px;
+    border: 2px solid green;
+    background-color: rgba(0, 255, 0, 0.1); /* Negro con 50% de opacidad */
+    font-size: 1vw;
+  }
+  .finishHour{
+    padding: 20px;
+    border: 2px solid red;
+    background-color: rgba(255, 0, 0, 0.1); /* Negro con 50% de opacidad */
+    font-size: 1vw;
+    
+  }

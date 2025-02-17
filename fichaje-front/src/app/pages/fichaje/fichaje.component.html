@@ -1,11 +1,28 @@
 <div class="container text-center mt-5">
-    <h2>Fichajes</h2>
-    <p>Registra tu entrada y salida</p>
-  
-    <button class="btn btn-primary m-2" (click)="fichar()">Fichar</button>
-  
-    <div @if{ultimaFichada} class="alert alert-success mt-3">
-      Última fichada: {{ ultimaFichada }}
+  <div class="time-content">
+    <div class="date-content">
+      <span class="textoDate">{{ fechaActual | date : "dd/MM/yyyy" }}</span>
+    </div>
+    <div class="hour-content">
+      <span class="textoHour">{{ fechaActual | date : "HH:mm:ss" }}</span>
     </div>
   </div>
-  
+  <div class="controls-content">
+    <div class="entry-content">
+    <button class="btn btn-primary m-2" (click)="setEntry()">
+      Registrar Entrada
+    </button>
+    @if(entryHour){
+      <span class="card entryHour">{{entryHour}}</span>
+    }
+  </div>
+  <div class="finish-content">
+    <button class="btn btn-primary m-2" (click)="setFinish()">
+      Registrar Salida
+    </button>
+    @if(finishHour){
+      <span class="card finishHour">{{finishHour}}</span>
+    }
+  </div>
+  </div>
+</div>
