@@ -1,6 +1,7 @@
 .container {
     max-width: 400px;
     margin: auto;
+    gap: 20px;
   }
   .time-content{
     display: flex;
@@ -12,7 +13,7 @@
   }
   .date-content{
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     flex: 1;
     min-width: 300px;
   }
@@ -39,13 +40,13 @@
     justify-content: space-between;
   }
   .entry-content{
-    max-width: 50%;
+    width: 50%;
     display: flex;
     gap: 20px;
     flex-direction: column;
   }
   .finish-content{
-    max-width: 50%;
+    width: 50%;
     gap: 20px;
     display: flex;
     flex-direction: column;

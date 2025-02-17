@@ -1,4 +1,4 @@
-<div class="container text-center mt-5">
+<div class="card container text-center mt-5 p-2">
   <div class="time-content">
     <div class="date-content">
       <span class="textoDate">{{ fechaActual | date : "dd/MM/yyyy" }}</span>
@@ -9,7 +9,7 @@
   </div>
   <div class="controls-content">
     <div class="entry-content">
-    <button class="btn btn-primary m-2" (click)="setEntry()">
+    <button class=" w-100 btn btn-success" [disabled]="isEntryDisabled" (click)="setEntry()">
       Registrar Entrada
     </button>
     @if(entryHour){
@@ -17,12 +17,19 @@
     }
   </div>
   <div class="finish-content">
-    <button class="btn btn-primary m-2" (click)="setFinish()">
+    <button class=" w-100 btn btn-danger" [disabled]="isFinishDisabled" (click)="setFinish()">
       Registrar Salida
     </button>
     @if(finishHour){
       <span class="card finishHour">{{finishHour}}</span>
     }
   </div>
+  </div>
+  <div>
+    @if(entryHour && finishHour){
+      <button class=" w-100 btn btn-primary" (click)="validate()">
+        Registrar Jornada
+      </button>
+    }
   </div>
 </div>

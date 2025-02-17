@@ -10,7 +10,8 @@ import { Component } from '@angular/core';
   styleUrl: './fichaje.component.css'
 })
 export class FichajeComponent {
-  ultimaFichada: string = '';
+  isEntryDisabled: boolean = false;
+  isFinishDisabled: boolean = false;
   fechaActual!: Date;
   entryHour: string = "";
   finishHour: string = "";
@@ -24,10 +25,19 @@ export class FichajeComponent {
   setEntry() {
     const now = new Date();
     this.entryHour = now.toLocaleString(); // Guarda la fecha y hora actual
+    this.isEntryDisabled = true
   }
   setFinish() {
     const now = new Date();
-    this.finishHour= now.toLocaleString(); // Guarda la fecha y hora actual
+    this.finishHour= now.toLocaleString();
+    this.isFinishDisabled = true; // Guarda la fecha y hora actual
+  }
+  validate(){
+    this.entryHour="";
+    this.finishHour="";
+    this.isEntryDisabled = false;
+    this.isFinishDisabled = false;
+    console.log("se valida");
   }
 }
 
