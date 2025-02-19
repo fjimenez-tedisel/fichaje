@@ -1,20 +1,18 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { CalendarModule } from 'primeng/calendar';
-import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatInputModule } from '@angular/material/input';
-import { MatNativeDateModule } from '@angular/material/core';
+import { CalendarComponent } from "../../components/calendar/calendar.component";
+
 
 @Component({
   selector: 'app-vacaciones',
-  standalone: true,
-  imports: [CalendarModule, FormsModule,   MatDatepickerModule,
-    MatInputModule,
-    MatNativeDateModule],
+  standalone:true,
+  imports: [CalendarComponent],
   templateUrl: './vacaciones.component.html',
   styleUrl: './vacaciones.component.css'
 })
-export class VacacionesComponent {
-  selectedDates: Date[] = [];
 
-}
+  export class VacacionesComponent {
+ 
+    
+  }
+  
+  

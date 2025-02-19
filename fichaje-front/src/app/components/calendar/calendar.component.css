@@ -1,0 +1,17 @@
+button.vacaciones {
+    background: orange;
+    border-radius: 100%;
+  }
+  button.festivo {
+    background: green;
+    border-radius: 100%;
+  }
+  .demo-inline-calendar-card {
+    width: 300px;
+  }
+  .selected-date {
+  background-color: blue !important; /* Fondo azul */
+  color: white !important; /* Texto blanco */
+  font-weight: bold;
+  border-radius: 50%;
+}

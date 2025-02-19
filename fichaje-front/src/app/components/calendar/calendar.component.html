@@ -1,0 +1,6 @@
+
+
+<mat-card class="demo-inline-calendar-card">
+    <mat-calendar #calendar [(selected)]="fechaSeleccionada" [dateFilter]="filtrarDias" [dateClass]="dateClass" (selectedChange)="onDateSelected($event, calendar)"></mat-calendar>
+  </mat-card>
+  <p>Selected date: </p>
