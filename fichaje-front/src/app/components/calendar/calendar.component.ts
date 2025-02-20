@@ -6,6 +6,7 @@ import { MatCalendarCellClassFunction } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatCardModule} from '@angular/material/card';
 import { DatePipe } from '@angular/common';
+import { AlertasService } from '../../services/alertas/alertas.service';
 
 @Component({
   selector: 'app-calendar',
@@ -20,8 +21,6 @@ import { DatePipe } from '@angular/common';
 export class CalendarComponent {
   fechaSeleccionada: Date | null = null;
     formattedDate: string = '';
-
-    // Lista de días festivos en formato YYYY-MM-DD
     festivos: string[] = [
       '2025-01-01', // Año Nuevo
       '2025-01-06', // Reyes Magos
@@ -35,9 +34,10 @@ export class CalendarComponent {
       '2025-12-06', // Día de la Constitución
       '2025-12-25', // Navidad
     ];
-    diasSeleccionados: String[] = [
-    ];
-    constructor(private datePipe: DatePipe) {}
+    diasSeleccionados: String[] = [];
+    diasAprobados: String[]=[];
+    constructor(private datePipe: DatePipe, 
+      private alarmaService:AlertasService) {}
      // Función para marcar los días festivos en el calendario sin errores de zona horaria
      fechaMarcada!: Date;
      diaSelec!: String;
@@ -62,9 +62,11 @@ export class CalendarComponent {
         const clases: string[] = [];
     
         if (this.diasSeleccionados.includes(dateString)) {
+          clases.push('seleccionados'); // Clase para días seleccionados
+        }
+        if (this.diasAprobados.includes(dateString)) {
           clases.push('vacaciones'); // Clase para días seleccionados
         }
-    
         if (this.festivos.includes(dateString)) {
           clases.push('festivo'); // Clase para días festivos
         }
@@ -93,6 +95,24 @@ export class CalendarComponent {
     console.log(data)
       this.formattedDate = this.datePipe.transform(data, 'yyyy-MM-dd') || '';
       return this.formattedDate
+  }
+  validateDays(calendar:any){
+    if(this.diasSeleccionados.length === 0){
+      this.alarmaService.mostrarAlerta('','No hay dias seleccionados', 'warning')
+    }else{
+      this.alarmaService.mostrarAlertaConCancel('','¿Seguro que quieres valdiar estos dias?', 'warning')
+      .then((res)=> {
+        if(res.isConfirmed){
+          this.diasAprobados.push(...this.diasSeleccionados)
+          this.diasSeleccionados = [];
+          calendar.updateTodaysDate();
+          this.diasAprobados = [...new Set(this.diasAprobados)];
+        }
+
+      })
+    }
+
+
   }
 
 }

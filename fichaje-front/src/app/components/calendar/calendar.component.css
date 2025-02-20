@@ -1,9 +1,13 @@
-button.vacaciones {
+button.seleccionados {
     background: orange;
     border-radius: 100%;
   }
   button.festivo {
     background: green;
+    border-radius: 100%;
+  }
+  button.vacaciones {
+    background: pink;
     border-radius: 100%;
   }
   .demo-inline-calendar-card {
